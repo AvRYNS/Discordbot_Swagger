@@ -7,7 +7,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 
 client.on('ready', ()=> {
-    crossOriginIsolated.log('bot is ready');
+    console.log('bot is ready');
 })
 
 client.on('messageCreate', async (message) => {
