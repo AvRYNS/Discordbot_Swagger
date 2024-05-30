@@ -41,10 +41,6 @@ client.on('messageCreate', async (message) => {
         console.error(e)
     }
 
-
-
-
-
     // if (message.content === '임베딩'){
     //     const embed = new EmbedBuilder()   
     //         .setColor('#AD1457')
@@ -53,9 +49,9 @@ client.on('messageCreate', async (message) => {
     //         .setFooter({text: 'swagger', iconURL:'https://pbs.twimg.com/media/GN-VJvvboAAwgS_.jpg'})
     //         .setThumbnail('https://pbs.twimg.com/media/GN-VJvvboAAwgS_.jpg')
     //         .addFields(
-    //             { name: 'Field 1', value: '윤두창', inline: true }, //True면 해당 줄에 이어서
+    //             { name: 'Field 1', value: '엄', inline: true }, //True면 해당 줄에 이어서
     //             { name: ' ', value: '=', inline: false }, // False로 된 것부터 다음 줄에서 시작
-    //             { name: 'Field 3', value: '개새끼', inline: false }
+    //             { name: 'Field 3', value: '준', inline: false }
     //         );
     //     message.channel.send({ embeds:[embed] });
     // }
@@ -64,9 +60,9 @@ client.on('messageCreate', async (message) => {
     //         content: 'pong',
     //     })
     // }
-    // if (message.content === '우'){
+    // if (message.content === '잇'){
     //     message.reply({
-    //         content: '흥',
+    //         content: '댓',
     //     })
     // }
 

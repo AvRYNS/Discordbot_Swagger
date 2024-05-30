@@ -26,7 +26,7 @@ exports.run = async(client, message, args, prefix) => {
     const embed = new Discord.EmbedBuilder()   
         .setColor('#AD1457')
         .setTitle('현재 나무위키 실검')
-        .setFooter({text: 'swagger', iconURL:'https://pbs.twimg.com/media/GN-VJvvboAAwgS_.jpg'})
+        .setFooter({text: 'swagger 기타 ', iconURL:'https://pbs.twimg.com/media/GN-VJvvboAAwgS_.jpg'})
         .addFields(
             { name: '1', value: list[0], inline: false}, //True면 해당 줄에 이어서
             { name: '2', value: list[1], inline: false},
