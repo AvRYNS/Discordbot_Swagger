@@ -1,9 +1,13 @@
 exports.run = async (client, msg, args, prefix) => {
-    msg.channel.send(`"스웨그 ?" : 명령어를 출력합니다.`)
-    msg.channel.send(`"스웨그 실검" : 현재 나무위키 실시간 검색어 순위를 출력합니다.`)
-    msg.channel.send(`"스웨그 임베드" : ㅇ`)
-    msg.channel.send(`"스웨그 핑" : 스웨거 봇의 핑(지연시간ms)을 출력합니다.`)
-    msg.channel.send(`"스웨그 보이스" : 보이스 채널에 연결합니다.`)
+    const message = "```스웨그 ? : 명령어를 출력합니다.\n"
+    + "스웨그 실검 : 현재 나무위키 실시간 검색어 순위를 출력합니다.\n"
+    + "스웨그 임베드 : ㅇ\n"
+    + "스웨그 핑 : 현재 서버와의 핑을 표시합니다.\n"
+    +"스웨그 조인 : 현재 보이스 채널에 연결합니다.\n"
+    +"스웨그 퇴장 : 현재 참가한 보이스 채널에서 퇴장합니다.\n"
+    +"스웨그 GPT : 스웨그를 기반으로 만들어진 챗봇\n"
+    + "```";
+    msg.channel.send(message)
 }
 
 exports.config = {
