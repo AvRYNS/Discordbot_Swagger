@@ -5,11 +5,11 @@ exports.run = async (client, msg, args, prefix) => {
     + "스웨그 핑 : 현재 서버와의 핑을 표시합니다.\n"
     +"스웨그 조인 : 현재 보이스 채널에 연결합니다.\n"
     +"스웨그 퇴장 : 현재 참가한 보이스 채널에서 퇴장합니다.\n"
-    +"스웨그 GPT : 스웨그를 기반으로 만들어진 챗봇\n"
+    +"스웨그 GPT : 스웨그용 GPT4 챗봇(무료로 GPT4를 사용해보세요)\n"
     + "```";
     msg.channel.send(message)
 }
-
+//did nothing
 exports.config = {
     name: '?',
     aliases: ['?', 'help'],
