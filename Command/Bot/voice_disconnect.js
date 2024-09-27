@@ -1,6 +1,6 @@
 const voiceDiscord = require('@discordjs/voice');
 const {Message, MessageEmbed} = require('discord.js')
-exports.run = async (client, msg, args, prefix) => {
+exports.run = async (command, msg, args, prefix) => {
     const channel = msg.member.voice.channel;
 
     if (!channel) {

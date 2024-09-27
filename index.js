@@ -1,13 +1,18 @@
 require('dotenv').config()
 
 const axios = require('axios');
-const { Client, GatewayIntentBits, EmbedBuilder, Collection} = require('discord.js');
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const { Client, GatewayIntentBits, EmbedBuilder, Collection, IntentsBitField, VoiceState} = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds, 
+    GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates] });
 const fs = require('fs')
 
 
 client.on('ready', ()=> {
+    const packageJSON = require("./package.json");
+    const discordjsVersion =  packageJSON.dependencies["discord.js"];
+    console.log('Current DiscordJS version : '+discordjsVersion);
     console.log('bot is ready');
+    
 })
 client.aliases = new Collection()
 client.commands = new Collection()
@@ -37,35 +42,16 @@ client.on('messageCreate', async (message) => {
     let command = args.shift().toLowerCase()
     try { 
         runCommand(command, message, args, prefix)
+        // console.log(`command : ${command}`)
+        // console.log(`messages : ${message}`)
+        // console.log(`args : ${args}`)
+        // console.log(`prefix : ${prefix}`)
     } catch (e) {
         console.error(e)
     }
-
-    // if (message.content === '임베딩'){
-    //     const embed = new EmbedBuilder()   
-    //         .setColor('#AD1457')
-    //         .setTitle('title')
-    //         .setDescription('본문에 해당하는 내용이 들어갑니다.')
-    //         .setFooter({text: 'swagger', iconURL:'https://pbs.twimg.com/media/GN-VJvvboAAwgS_.jpg'})
-    //         .setThumbnail('https://pbs.twimg.com/media/GN-VJvvboAAwgS_.jpg')
-    //         .addFields(
-    //             { name: 'Field 1', value: '엄', inline: true }, //True면 해당 줄에 이어서
-    //             { name: ' ', value: '=', inline: false }, // False로 된 것부터 다음 줄에서 시작
-    //             { name: 'Field 3', value: '준', inline: false }
-    //         );
-    //     message.channel.send({ embeds:[embed] });
-    // }
-    // if (message.content === 'ping'){
-    //     message.reply({
-    //         content: 'pong',
-    //     })
-    // }
-    // if (message.content === '잇'){
-    //     message.reply({
-    //         content: '댓',
-    //     })
-    // }
-
 })
 
 client.login(process.env.DISCORD_BOT_ID)
+
+module.exports = runCommand;
+//node index.js
